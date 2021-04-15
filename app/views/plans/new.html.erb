@@ -16,6 +16,13 @@
         <label class='plan-form__label' for='plam_プランメンバー'>プランメンバー</label>
       </div>
       <div class='plan-form__field--right'>
+        <select name="plan[user_ids][]">
+          <option value="">共有するユーザーを選択してください</option>
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=<%= user.id %>><%= user.name %></option>
+          <% end %>
+        </select>
+        <input name="plan[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
     <div class='plan-form__field'>
