@@ -1,0 +1,35 @@
+<div class='plan-form'>
+  <h1>新規Plan</h1>
+  <%=form_with model: @plan, local: true do |f|%>
+    <div class='plan-form__field'>
+      <div class='plan-form__field--left'>
+        <%= f.label :予定タイトル, class: 'plan-form__label'%>
+      </div>
+      <div class='plan-form__field--right'>
+        <%= f.text_field :title, class: 'plan_name plan-form__input', placeholder: 'Plan titleを入力してください'%>
+      </div>
+    </div>
+    <div class='plan-form__field'>
+    </div>
+    <div class='plan-form__field'>
+      <div class='plan-form__field--left'>
+        <label class='plan-form__label' for='plan_プランメンバー'>プランメンバー</label>
+      </div>
+      <div class='plan-form__field--right'>
+        <select name="plan[user_ids][]">
+          <option value="">共有するユーザーを選択してください</option>
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=<%= user.id %>><%= user.name %></option>
+          <% end %>
+        </select>
+        <input name="plan[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    <div class='plan-form__field'>
+      <div class='plan-form__field--left'></div>
+      <div class='plan-form__field--right'>
+        <%= f.submit class: 'plan-form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>

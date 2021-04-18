@@ -1,0 +1,64 @@
+<div class='wrapper'>
+  <div class='plan_side-bar'>
+    <div class="plan_side-bar-header">
+     <div class="plan_header-name">
+       <%# カレントユーザー表示 %>
+       <%= current_user.name %>
+     </div>
+     <div class="create-plan">
+       <%# 以下新規予定追加機能 %>
+       <%= link_to "CreatePlan", new_plan_path %>
+     </div>
+   </div>
+   <%# 以下知り合い表示 %>
+   <div class="friend-members">
+     <div class="friend-member">
+       <div class="friend-member-name">
+         <a href="#">Tom</a>
+       </div>
+     </div>
+     <div class="friend-member">
+       <div class="friend-member-name">
+         <a href="#">Catherine</a>
+       </div>
+     </div>
+   </div>
+  </div>
+  <div class="contents">
+      <div class="contents-header">
+        <div class="left-header">
+          <div class="header-title">
+          YourPlans
+          </div>
+        </div>
+        <div class="right-header">
+          <div class="header-button">
+          <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <ul class='plan-lists'>
+         <% current_user.plans.each do |plan| %>
+          <li class='list'>
+            <div class="detail">
+             <div class="upper-detail">
+                <div class="content-detail">
+                  <%= link_to(plan.title, plan_path(plan.id), method: :get,class: "content-detail-title" )%>
+                </div>
+             </div>
+             <div class="lower-detail">
+               <div class="detail-date">
+                 <%= l plan.created_at %>
+               </div>
+             </div>
+           </div>
+         </li>
+       <% end %>
+       </ul>
+      </div>
+  </div>
+</div>
