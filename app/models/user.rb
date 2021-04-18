@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :plan_users
   has_many :plans, through: :plan_users
+  has_many :contents
 end
