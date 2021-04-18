@@ -3,11 +3,11 @@
     <div class="plan_side-bar-header">
      <div class="plan_header-name">
        <%# カレントユーザー表示 %>
-       <a href="#">ユーザーネーム</a>
+       <%= current_user.name %>
      </div>
      <div class="create-plan">
        <%# 以下新規予定追加機能 %>
-       <a href="#">Planを追加する</a>
+       <%= link_to "CreatePlan", new_plan_path %>
      </div>
    </div>
    <%# 以下知り合い表示 %>
@@ -33,27 +33,32 @@
         </div>
         <div class="right-header">
           <div class="header-button">
-            <a href="#">予定削除</a>
+          <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <% end %>
           </div>
         </div>
       </div>
 
       <div class="content">
-        <div class="detail">
-          <div class="upper-detail">
-            <div class="content-detail">
-              予定タイトル
-            </div>
-          </div>
-          <div class="lower-detail">
-            <div class="write-user">
-              書いた人名前
-            </div>
-            <div class="detail-date">
-              追加日、2020/3/31(Wed) 12:43:30
-            </div>
-          </div>
-        </div>
+        <ul class='plan-lists'>
+         <% current_user.plans.each do |plan| %>
+          <li class='list'>
+            <div class="detail">
+             <div class="upper-detail">
+                <div class="content-detail">
+                  <%= link_to(plan.title, plan_path(plan.id), method: :get,class: "content-detail-title" )%>
+                </div>
+             </div>
+             <div class="lower-detail">
+               <div class="detail-date">
+                 <%= l plan.created_at %>
+               </div>
+             </div>
+           </div>
+         </li>
+       <% end %>
+       </ul>
       </div>
   </div>
 </div>
