@@ -202,6 +202,7 @@ select {
   border: 1px solid darkred;
   color: darkred;
   padding: 1px;
+  font-size: 10px;
 }
 
 .content {
@@ -322,4 +323,5 @@ select {
   border: 1px solid darkred;
   color: darkred;
   padding: 1px;
+  font-size: 10px;
 }
