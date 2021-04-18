@@ -1,7 +1,7 @@
 <div class="side-bar-header">
   <div class="header-name">
 <%# 以下プランタイトル表示 %>
-    <a href="#">Title</a>
+    <%= @plan.title %>
   </div>
   <div class="create-content">
 <%# 以下新規コンテンツ追加機能 %>
@@ -12,7 +12,9 @@
 <div class="members">
 <div class="member">
     <div class="member-name">
-      <a href="#">Tom</a>
+      <%# <% @users.each do |user| %> 
+      <%# <%= user.name %> 
+      <%# <%end%>  
     </div>
   </div>
   <div class="member">

@@ -1,12 +1,13 @@
 class PlansController < ApplicationController
 
   def index
+    
   end
 
   def new
     @plan = Plan.new
   end
-  
+
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
@@ -14,6 +15,10 @@ class PlansController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @plan = Plan.find(params[:id])
   end
 
   private
