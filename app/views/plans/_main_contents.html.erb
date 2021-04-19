@@ -12,21 +12,7 @@
 </div>
 
 <div class="content">
-  <div class="detail">
-    <div class="upper-detail">
-      <div class="content-detail">
-        予定内容
-      </div>
-    </div>
-    <div class="lower-detail">
-      <div class="write-user">
-        Tom
-      </div>
-      <div class="detail-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'contents/content', collection: @contents %>
 </div>
 
 <%= form_with model: [@plan, @content], class: 'form', local: true do |f| %>

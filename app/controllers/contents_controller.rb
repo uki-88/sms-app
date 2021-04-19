@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
   def index
     @content = Content.new
     @plan = Plan.find(params[:plan_id])
+    @contents = @plan.contents.includes(:user)
   end
 
   def create
@@ -10,6 +11,7 @@ class ContentsController < ApplicationController
     if @content.save
       redirect_to plan_contents_path(@plan), method: :get
     else
+      @contents = @plan.contents.includes(:user)
       render :index
     end
   end

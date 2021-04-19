@@ -140,7 +140,7 @@ select {
 
 .plan_side-bar {
   background-color: #2e8b57;
-  width: 300px;
+  width: 250px;
   height: 100vh;
 }
 
@@ -177,7 +177,7 @@ select {
 
 .contents {
   background-color: #FFFFFF;
-  width: calc(100vw - 300px);
+  width: calc(100vw - 250px);
 }
 
 .contents-header {
@@ -205,7 +205,7 @@ select {
   font-size: 10px;
 }
 
-.content {
+.plan-content {
   background-color: #FAFAFA;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
@@ -227,31 +227,31 @@ select {
   background-color: #FFF;
 }
 
-.detail {
+.plan-detail {
   margin: 10px 0 0 0;
 }
 
-.upper-detail{
+.plan-upper-detail{
   display: flex;
 }
-/* 
-.write-user {
+
+.plan-write-user {
   color: #434a54;
   font-size: 16px;
 }
- */
 
-.detail-date {
+
+.plan-detail-date {
   color: #999;
   font-size: 12px;
   padding-left: 10px;
 }
 
-.lower-detail {
+.plan-lower-detail {
   margin-top: 10px;
 }
 
-.content-detail {
+.plan-content-detail {
   color: #434a54;
   font-size: 14px;
   margin-bottom: 40px;
