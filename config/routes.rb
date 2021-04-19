@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'contents/index'
   root to: "plans#index"
   resources :users, only: [:edit, :update]
-  resources :plans, only: [:new, :create, :show, :destroy]
+  resources :plans, only: [:new, :create, :show, :destroy] do
+    resources :contents, only: [:index, :create]
+  end
 end
