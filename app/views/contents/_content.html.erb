@@ -1,0 +1,18 @@
+<div class="content-detail">
+  <div class="content-upper-detail">
+    <div class="content-to_do">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= content.to_do %>
+    </div>
+  </div>
+  <div class="content-lower-detail">
+      <div class="content-write-user">
+        <!-- 投稿したユーザー名を出力する -->
+        <%= content.user.name %>
+      </div>
+      <div class="content-detail-date">
+        <!-- 投稿した時刻を出力する -->
+        <%= l content.created_at %>
+      </div>
+  </div>
+</div>
