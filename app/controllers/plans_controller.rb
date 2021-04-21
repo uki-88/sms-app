@@ -1,7 +1,7 @@
 class PlansController < ApplicationController
 
   def index
-    
+    @plans = Plan.all
   end
 
   def new
@@ -26,10 +26,10 @@ class PlansController < ApplicationController
     plan.destroy
     redirect_to root_path
   end
-  
+
   private
 
   def plan_params
-    params.require(:plan).permit(:title, user_ids: [])
+    params.require(:plan).permit(:title, :start_time, :end_time, user_ids: [])
   end
 end

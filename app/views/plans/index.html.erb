@@ -59,6 +59,14 @@
          </li>
        <% end %>
        </ul>
+       <%= month_calendar plans: @plans do |date, events| %>
+        <%= date.day %>
+        <% events.each do |event| %>
+          <div>
+            <%= event.title %>
+          </div>
+        <% end %>
+      <% end %>
       </div>
   </div>
 </div>
