@@ -1,13 +1,9 @@
 <div class='wrapper'>
   <div class='plan_side-bar'>
     <div class="plan_side-bar-header">
-     <div class="plan_header-name">
-       <%# カレントユーザー表示 %>
-       <%= current_user.name %>
-     </div>
-     <div class="create-plan">
-       <%# 以下新規予定追加機能 %>
-       <%= link_to "CreatePlan", new_plan_path %>
+      <div class="plan_header-name">
+       <%# rogo %>
+       SMS
      </div>
    </div>
    <%# 以下知り合い表示 %>
@@ -24,41 +20,59 @@
      </div>
    </div>
   </div>
-  <div class="contents">
-      <div class="contents-header">
+  <div class="plan-contents">
+      <div class="plan-contents-header">
         <div class="left-header">
-          <div class="header-title">
-          YourPlans
+          <div class="plan-header-title">
+          <%# カレントユーザー表示 %>
+            <%= current_user.name %>'s Plans
+          </div>
+          <div class="create-plan">
+            <%# 以下新規予定追加機能 %>
+            <%= link_to "CreatePlan", new_plan_path %>
           </div>
         </div>
         <div class="right-header">
-          <div class="header-button">
-          <% if user_signed_in? %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <% end %>
+          <div class="plan-header-button">
+           <% if user_signed_in? %>
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+           <% end %>
           </div>
         </div>
       </div>
-
-      <div class="plan-content">
-        <ul class='plan-lists'>
-         <% current_user.plans.each do |plan| %>
-          <li class='list'>
-            <div class="plan-detail">
-             <div class="plan-upper-detail">
-                <div class="plan-content-detail">
-                  <%= link_to(plan.title, plan_contents_path(plan.id), method: :get,class: "content-detail-title" )%>
+      <div class="plan-top">
+        <div class="plan-content">
+          <ul class='plan-lists'>
+            <% current_user.plans.each do |plan| %>
+              <li class='list'>
+                <div class="plan-detail">
+                  <div class="plan-upper-detail">
+                    <div class="plan-content-detail">
+                      <%= link_to(plan.title, plan_contents_path(plan.id), method: :get,class: "content-detail-title" )%>
+                    </div>
+                  </div>
+                  <div class="plan-lower-detail">
+                    <div class="plan-detail-date">
+                      <%= l plan.created_at %>
+                    </div>
+                  </div>
                 </div>
-             </div>
-             <div class="plan-lower-detail">
-               <div class="plan-detail-date">
-                 <%= l plan.created_at %>
-               </div>
-             </div>
+              </li>
+           <% end %>
+         </ul>
+       </div>
+        <%= month_calendar(events: @plans) do |date, plans| %>
+          <%= date.day %>
+          <% plans.each do |plan| %>
+           <div>
+             <%= link_to(plan.title, plan_contents_path(plan.id), method: :get) %>
            </div>
-         </li>
-       <% end %>
-       </ul>
-      </div>
+          <% end %>
+        <% end %>
+     </div>
   </div>
+   <div class="plan-right-side-bar">
+   </div>
+</div>
+<div class="plan-footer">
 </div>

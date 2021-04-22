@@ -130,38 +130,46 @@ select {
 }
 
 /* index.html.erb */
+
+.left-header {
+  display: flex;
+  justify-content: space-around;
+}
+
 .create-plan a{
   font-size: 10px;
-  border: 1px solid #fcc800;
-  padding: 14px;
-  color: #ffff8e;
+  border: 1px solid #009e9f;
+  padding: 12px;
+  margin-left: 10px;
+  color:#009e9f;
   text-decoration: none;
 }
 
 .plan_side-bar {
   background-color: #2e8b57;
-  width: 250px;
-  height: 100vh;
+  width: 150px;
+  
 }
 
 .plan_side-bar-header {
   height: 100px;
   padding: 0 20px;
-  background-color: #2e8b57;
+  background-color: #009e9f;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .plan_header-name {
-  font-size: 18px;
-  color: #fcc800;
+  font-size: 25px;
+  color: #f5df4d;
   text-decoration: none;
+  margin: auto;
 }
 
 .friend-members {
-  background-color: #fcc800;
-  height: calc(100vh - 100px);
+  background-color: #f5df4d;
+  height: 100%;
   padding: 0 20px;
   overflow: scroll;
 }
@@ -175,29 +183,30 @@ select {
   font-size: large;
 }
 
-.contents {
+.plan-contents {
   background-color: #FFFFFF;
-  width: calc(100vw - 250px);
+  width: calc(100vw - 300px);
 }
 
-.contents-header {
+.plan-contents-header {
   height: 100px;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #f5df4d;
 }
 
-.header-title {
-  color: #333;
+.plan-header-title {
+  color: #939597;
   font-size: 24px;
-  margin-top: 36px;
+  
 }
 
-.header-button {
-  margin-top: 40px;
+.plan-header-button {
 }
 
-.header-button a {
+.plan-header-button a {
   text-decoration: none;
   border: 1px solid darkred;
   color: darkred;
@@ -206,7 +215,7 @@ select {
 }
 
 .plan-content {
-  background-color: #FAFAFA;
+  background-color: #009e9f;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
   overflow: scroll;
@@ -217,14 +226,15 @@ select {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-
 }
 
 .plan-lists>.list {
   width: 37vh;
   padding: 1vw;
   margin: 1vw;
-  background-color: #FFF;
+  background-color: #f5df4d;
+  border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+  border: 2px solid #fcc800;
 }
 
 .plan-detail {
@@ -249,6 +259,7 @@ select {
 
 .plan-lower-detail {
   margin-top: 10px;
+  text-align: end;
 }
 
 .plan-content-detail {
@@ -261,4 +272,67 @@ select {
   text-decoration: none;
 }
 
+.plan-footer {
+  background-color: #f5df4d;
+  height: 100px;
+  padding: 20px 40px;
+}
 
+.plan-right-side-bar {
+  background-color: #f5df4d;
+  height: calc(100%+100px);
+  width: 150px;
+}
+/* カレンダー */
+.simple-calendar {
+  .calendar-heading{
+    background-color: #f5df4d;
+    color: #939597;
+  }
+  th {
+    background-color: #009e9f;
+    color: #f1f0ec;
+  }
+  .day {
+    background-color: #ffffff;
+    border-bottom: solid #939597;
+    color: #939597;
+  }
+
+  .wday-0 {
+    border-bottom: solid #d36480;
+    color: #d36480;
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {
+    border-bottom: solid #00589b;
+    color: #00589b;
+  }
+
+  .today {
+    background-color: #f5df4d;
+    color: #FFFFFF;
+  }
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background-color: #f1f0ec;
+    color: #939597;
+  }
+  .next-month { 
+    background-color: #f1f0ec;
+    color: #939597;
+  }
+  .current-month {}
+
+  .has-events {
+    color: #d36480;
+  }
+}
