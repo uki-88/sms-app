@@ -2,13 +2,18 @@
   <div class='plan_side-bar'>
     <div class="plan_side-bar-header">
       <div class="plan_header-name">
-       <%# rogo %>
+       <%# logo %>
        <%= image_tag "/images/IMG_0188.PNG", :size =>'60x60'%>
-       
      </div>
-     <div class="rogo-text"> SMS </div>
+     <div class="logo-text"> 
+       SMS
+     </div>
+     <%# ここまで %>
    </div>
    <%# 以下知り合い表示 %>
+   <div class="friend-members-header">
+       FriendMembers
+  </div>
    <div class="friend-members">
      <div class="friend-member">
        <div class="friend-member-name">
@@ -21,20 +26,23 @@
        </div>
      </div>
    </div>
+   <%# ここまで %>
   </div>
   <div class="plan-contents">
       <div class="plan-contents-header">
         <div class="left-header">
           <div class="plan-header-title">
-          <%# カレントユーザー表示 %>
+            <%# カレントユーザー表示 %>
             <%= current_user.name %>'s Plans
-          </div>
-          <div class="create-plan">
-            <%# 以下新規予定追加機能 %>
-            <%= link_to "CreatePlan", new_plan_path %>
+            <%# ここまで %>
           </div>
         </div>
         <div class="right-header">
+          <div class="create-plan">
+            <%# 以下新規予定追加機能 %>
+            <%= link_to "CreatePlan", new_plan_path %>
+            <%# ここまで %>
+          </div>
           <div class="plan-header-button">
            <% if user_signed_in? %>
              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
