@@ -156,17 +156,17 @@ select {
   padding: 0 20px;
   background-color: #009e9f;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .plan_header-name {
-  font-size: 25px;
-  color: #f5df4d;
   text-decoration: none;
-  margin: auto;
 }
-
+.rogo-text {
+  font-size: 60px;
+  writing-mode: vertical-rl;
+  color: #f5df4d;
+}
 .friend-members {
   background-color: #f5df4d;
   height: 100%;
