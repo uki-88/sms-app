@@ -1,14 +1,16 @@
 <div class="side-bar-header">
   <div class="header-name">
-<%# 以下プランタイトル表示 %>
-    <%= @plan.title %>
+    <%# logo %>
+    <%= link_to image_tag("/images/smsrogo6.png", size:'60x60'), root_path %>
   </div>
-  <div class="redirect-to-top">
-<%# 以下topページ戻るボタン %>
-    <%= link_to "TOP", root_path%>
+  <div class="content-logo-text"> 
+    SMS
   </div>
+    <%# ここまで %>
 </div>
-
+<div class="plan-members-header">
+       PlanMembers
+   </div>
 <div class="members">
   <div class="member">
      <% @plan.users.each do |user| %> 
