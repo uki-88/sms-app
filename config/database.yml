@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: sms_app_production
-  username: sms_app
-  password: <%= ENV['SMS_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
