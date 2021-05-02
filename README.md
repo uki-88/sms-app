@@ -23,7 +23,17 @@
 なので、ぱっと見で予定が把握できて、予定をチームで共通でき、無駄な時間を減らし、仕事を効率化できるアプリがあると良いなと思い制作に至りました。
 
 ## DEMO
-今後デプロイ予定
+[アプリのリンク](http://3.113.38.218/)	
+* BASIC_AUTH_USER: admin
+* BASIC_AUTH_PASSWORD: 2222
+
+* テストアカウント 
+
+| name   | mail address   | password |
+|:-------|---------------:|:--------:|
+| テスト1 | test1@mail.com | 111qqq   |
+| テスト2 | test2@mail.com | 222www   |
+
 
 ### トップ画面
 [![Image from Gyazo](https://i.gyazo.com/012b3daed1cbc030ea27f3c5a42ee61c.gif)](https://gyazo.com/012b3daed1cbc030ea27f3c5a42ee61c)
@@ -39,9 +49,10 @@
 ## 今後追加したい機能
 * ユーザーフォロー機能
 * sns認証
+* テストコード
 
 ## 開発環境
-Ruby / Ruby on Rails / MySQL / GitHub / AWS / Visual Studio Code
+Ruby / Ruby on Rails / MySQL / GitHub / AWS /EC2/ Visual Studio Code
 
 
 
