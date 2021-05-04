@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+before_action :move_to_index, only: [ :destroy]
 
   def index
     @plans = Plan.all
@@ -17,10 +18,6 @@ class PlansController < ApplicationController
     end
   end
 
-  def show
-    @plan = Plan.find(params[:id])
-  end
-
   def destroy
     plan = Plan.find(params[:id])
     plan.destroy
@@ -32,4 +29,9 @@ class PlansController < ApplicationController
   def plan_params
     params.require(:plan).permit(:title, :start_time, :end_time, user_ids: [])
   end
+
+  def move_to_index
+    redirect_to root_path if @plan.user_id != current_user.id
+  end
+
 end
